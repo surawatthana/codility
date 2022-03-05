@@ -10,11 +10,11 @@ class MergeTwoSortedList {
 
 	@Test
 	void case1() {
-		ListNode actual = this.mergeTwoLists(new ListNode(1, new ListNode(2, new ListNode(4))),
+		ListNode actual = this.mergeTwoLists(
+				new ListNode(1, new ListNode(2, new ListNode(4))),
 				new ListNode(1, new ListNode(3, new ListNode(4))));
 
-		ListNode expected = new ListNode(1,
-				new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(4))))));
+		ListNode expected = new ListNode(1, new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(4))))));
 
 		assertEquals(expected, actual);
 	}
@@ -54,35 +54,6 @@ class MergeTwoSortedList {
 			l2.next = mergeTwoLists(l1, l2.next);
 			return l2;
 		}
-		
-		
-		
-//		ListNode p, result = new ListNode();
-//		p = result;
-//
-//		while (list1 != null || list2 != null) {
-//			if (list1 == null && list2 != null) {
-//				p.next = new ListNode(list2.val);
-//				p = p.next;
-//				list2 = list2.next;
-//			} else if (list1 != null && list2 == null) {
-//				p.next = new ListNode(list1.val);
-//				p = p.next;
-//				list1 = list1.next;
-//			} else {
-//				if (list1.val > list2.val) {
-//					p.next = new ListNode(list2.val);
-//					p = p.next;
-//					list2 = list2.next;
-//				}else {
-//					p.next = new ListNode(list1.val);
-//					p = p.next;
-//					list1 = list1.next;
-//				}
-//			}
-//		}
-//
-//		return result.next;
 	}
 
 }
