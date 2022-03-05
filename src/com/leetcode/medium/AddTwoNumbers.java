@@ -9,18 +9,22 @@ import com.leetcode.ListNode;
 class AddTwoNumbers {
 
 	@Test
-	void test() {
+	void case1() {
 		ListNode result = this.addTwoNumbers(new ListNode(2, new ListNode(4, new ListNode(3))),
 				           new ListNode(5, new ListNode(6, new ListNode(4))));
 		
 		assertEquals(result, new ListNode(7, new ListNode(0, new ListNode(8))));
-		
-		result = this.addTwoNumbers(new ListNode(0), new ListNode(0));
+	}
+	@Test
+	void case2() {
+		ListNode result = this.addTwoNumbers(new ListNode(0), new ListNode(0));
 		assertEquals(result, new ListNode(0));
-		
-		result = this.addTwoNumbers(
-			new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9)))))))),
-		    new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9)))));
+	}
+	@Test
+	void case3() {
+		ListNode result = this.addTwoNumbers(
+				new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9)))))))),
+				new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9)))));
 		assertEquals(result, new ListNode(8, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(0, new ListNode(0, new ListNode(0, new ListNode(0, new ListNode(1))))))))));
 	}
 
