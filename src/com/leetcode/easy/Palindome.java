@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-class Palindome01 {
+class Palindome {
 
 	@Test
 	void test() {
