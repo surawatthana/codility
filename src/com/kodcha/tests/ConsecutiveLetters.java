@@ -78,7 +78,6 @@ class ConsecutiveLetters {
         			
         			while (index >= currentQuestionMarkPosition - 2) {
         				
-        				if()
         				
         				index++;
         			}
