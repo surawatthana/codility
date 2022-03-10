@@ -26,29 +26,5 @@ class Solution {
 		}
 		
 		return i == s.length();
-		
-
- 
-
-//        char[] ts = t.toCharArray();
-//        char[] ss = s.toCharArray();
-//        
-//        int currentIndex = 0;
-//        int numberOfMatchedCharacters = 0;
-//        
-//        for(int i = 0; i< ss.length; i++) {
-//            INNER:
-//            for (int j = currentIndex; j < ts.length; j++) {
-//                if(ts[j] == ss[i]) {
-//                    currentIndex = ++j;
-//                    numberOfMatchedCharacters++;
-//                    break INNER;
-//                }
-//            }
-//        }
-//        
-//        
-//        
-//        return numberOfMatchedCharacters == s.length() ;
 	}
 }
