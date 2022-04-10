@@ -7,38 +7,58 @@ import org.junit.jupiter.api.Test;
 class MyTapeEquilibrium {
 
 	@Test
-	void test() {
+	void test01() {
 		assertEquals(1, new MyTapeEquilibrium().solution(new int[] { 3, 1, 2, 4, 3 }));
 	}
 
+	@Test
+	void test02() {
+		assertEquals(2000, new MyTapeEquilibrium().solution(new int[] { 0, 2000 }));
+	}
+
+	@Test
+	void test03() {
+		assertEquals(2000, new MyTapeEquilibrium().solution(new int[] { 2000, 4000 }));
+	}
+
+	@Test
+	void test04() {
+		assertEquals(20, new MyTapeEquilibrium().solution(new int[] { 0, 20 }));
+	}
+
+	@Test
+	void test05() {
+		assertEquals(20, new MyTapeEquilibrium().solution(new int[] { 20, 40 }));
+	}
+
+	@Test
+	void test06() {
+		assertEquals(1, new MyTapeEquilibrium().solution(new int[] { -3, 1, 2, -4, 3 }));
+		assertEquals(4, new MyTapeEquilibrium().solution(new int[] { 5, 2, 7, 10 }));
+		assertEquals(490, new MyTapeEquilibrium().solution(new int[] { -1000, 1000, -500, 990 }));
+		assertEquals(1, new MyTapeEquilibrium().solution(new int[] { 1, 2 }));
+		assertEquals(125, new MyTapeEquilibrium().solution(new int[] { 100, -25 }));
+	}
+
 	public int solution(int[] A) {
-
-		int[] sumForward = new int[A.length];
-		int sum = 0;
+		int sumAll = 0;
 		for (int i = 0; i < A.length; i++) {
-			sum += A[i];
-			sumForward[i] = sum;
+			sumAll += A[i];
 		}
 
-		int[] sumBackward = new int[A.length];
-		int sumBack = 0;
-		for (int i = A.length - 1; i >= 0; i--) {
-			sumBack += A[i];
-			sumBackward[i] = sumBack;
-		}
+		int minDifference = Integer.MAX_VALUE;
+		int currentDifference = 0;
+		int resultLeft = 0;
+		int resultRight = 0;
 
-		int min = Integer.MAX_VALUE;
 		for (int i = 0; i < A.length - 1; i++) {
-			int absoluteDiff = Math.abs(sumForward[i] - sumBackward[i + 1]);
-			min = Math.min(min, absoluteDiff);
-
-			if (min == 0) {
-				break;
-			}
+			resultLeft += A[i];
+			resultRight = sumAll - resultLeft;
+			currentDifference = Math.abs(resultLeft - resultRight);
+			minDifference = Math.min(minDifference, currentDifference);
 		}
 
-		return min;
-
+		return minDifference;
 	}
 
 }
