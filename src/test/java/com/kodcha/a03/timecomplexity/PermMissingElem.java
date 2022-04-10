@@ -15,6 +15,7 @@ class PermMissingElem {
 
 	public int solution(int[] A) {
 
+		// null or zero element
 		if (A == null || A.length == 0) {
 			return 1;
 		}
