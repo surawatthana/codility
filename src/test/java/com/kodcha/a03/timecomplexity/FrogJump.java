@@ -11,6 +11,8 @@ public class FrogJump {
 	}
 
 	public int solution(int X, int Y, int D) {
-		return (X < Y) ? (Y - X) / D + ((Y - X) % D > 0 ? 1 : 0) : 0;
+		int whole = (Y - X) / D;
+		int remainder = ((Y - X) % D > 0 ? 1 : 0);
+		return (X < Y) ? whole + remainder : 0;
 	}
 }
