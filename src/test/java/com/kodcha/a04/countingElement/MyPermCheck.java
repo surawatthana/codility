@@ -3,9 +3,6 @@ package com.kodcha.a04.countingElement;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.Arrays;
-import java.util.List;
-import java.util.SortedSet;
-import java.util.TreeSet;
 
 import org.junit.jupiter.api.Test;
 
@@ -23,11 +20,19 @@ class MyPermCheck {
 
 	public int solution(int[] A) {
 		
-		List<Integer> list = new 
-
-		SortedSet<Integer> set = new TreeSet();
-
-		if (set.first().equals(1) && set.last().equals(A.length) && set.last().equals(set.size())) {
+				// O(log N)
+		Arrays.sort(A);
+		
+		// check if it is really a permutation
+		if (A[0] == 1 && A[A.length -1] == A.length) {
+			// check if all elements are consecutive. O(N)
+			for (int i = 0; i< A.length - 1; i++) {
+				int j = i+1;
+				
+				if (A[i] + 1 != A[j] ) {
+					return 0;
+				}
+			}
 			return 1;
 		} else {
 			return 0;
