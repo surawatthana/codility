@@ -20,7 +20,7 @@ class MyPermCheck {
 
 	public int solution(int[] A) {
 		
-				// O(log N)
+		// O(log N)
 		Arrays.sort(A);
 		
 		// check if it is really a permutation
