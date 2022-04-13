@@ -66,6 +66,25 @@ class MyMissingInteger {
 
 	public int solution(int[] A) {
 
-return 0;
+		Set<Integer> perfectSet = new HashSet<>();
+		Set<Integer> testSet = new HashSet<>();
+
+		for (int i = 0; i < A.length; i++) {
+			perfectSet.add(i + 1);
+			testSet.add(A[i]);
+		}
+
+		for (Integer integer : perfectSet) {
+			if (!testSet.contains(integer)) {
+				return integer;
+			}
+		}
+		
+		if (perfectSet.size() == testSet.size()) {
+			return A[A.length - 1] + 1;
+		}
+
+		return 1;
+
 	}
 }
