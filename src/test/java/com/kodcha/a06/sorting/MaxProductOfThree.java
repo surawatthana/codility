@@ -1,8 +1,8 @@
 package com.kodcha.a06.sorting;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import java.util.Arrays;
 
 import org.junit.jupiter.api.Test;
 
@@ -10,27 +10,16 @@ class MaxProductOfThree {
 
 	@Test
 	void test() {
-		System.out.println(  this.solution(new int[] {-3, 1, 2, -2, 5, 6}) == 60);
+		assertEquals(60,  this.solution(new int[] {-3, 1, 2, -2, 5, 6}));
 	}
 	
 	public int solution(int[] A) {
+		Arrays.sort(A);
 		
-		List<Integer> integers = new ArrayList();
-	    for(int i=0; i<A.length; i++) {
-	    	integers.add(A[i]);
-	    }
+		int productOf3Largest = A[A.length - 1] * A[A.length - 2] * A[A.length - 3];
+		int productOfLargestElementWith2SmallestElements = A[A.length - 1] * A[0] * A[1];
 		
-		Collections.sort(integers);
-		
-		int product1, product2, product3, product4 ;
-		
-		product1 = integers.get(0) * integers.get(1) * integers.get(2); //first 3 elements
-	    product2 = integers.get(integers.size()-3) * integers.get(integers.size()-2) * integers.get(integers.size()-1); //last 3 elements
-	    product3 = integers.get(0) * integers.get(1) * integers.get(integers.size()-1); //first 2 and last element
-	    product4 = integers.get(0) * integers.get(integers.size()-2) * integers.get(integers.size()-1); //first and last 2 elements
-
-		
-		return Math.max(Math.max(product1, product2), Math.max(product3, product4));
+		return Math.max( productOf3Largest, productOfLargestElementWith2SmallestElements );
 	}
 	
 
