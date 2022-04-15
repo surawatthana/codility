@@ -1,6 +1,6 @@
 package com.kodcha.a05.prefixsum;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 import org.junit.jupiter.api.Test;
@@ -33,12 +33,13 @@ class CountDiv {
 	
 
 	public int solution(int A, int B, int K) {
-		int counter = B/K - A/K;
-		if (A%K == 0) {
-			counter++;
-		}
 		
-		return counter;
+		
+		int c = B/K - A/K;
+		if (A%K == 0) {
+			c++;
+		}
+		return c;
 	}
 
 
