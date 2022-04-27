@@ -25,7 +25,7 @@ class FindClosestValue {
 		
 		
 		
-		return 
+		return 1;
 	}
 	
 	private class BST {
