@@ -1,4 +1,4 @@
-package algoexpert.easy;
+package algoexpert.array.easy;
 
 import static org.junit.jupiter.api.Assertions.*;
 
