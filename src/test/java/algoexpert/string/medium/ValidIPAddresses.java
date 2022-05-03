@@ -44,7 +44,7 @@ class ValidIPAddresses {
 	}
 	
 
-	public List<String> validIPAddresses(String inputString) {
+	public ArrayList<String> validIPAddresses(String inputString) {
 		List<String> result = new ArrayList<>();
 
 		if (inputString.length() < 4 || inputString.length() > 12) {
